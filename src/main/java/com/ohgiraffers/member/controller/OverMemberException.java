@@ -1,2 +1,7 @@
-package com.ohgiraffers.member.controller;public class OverMemberException {
+package com.ohgiraffers.member.controller;
+
+public class OverMemberException extends Exception {
+
+
+
 }

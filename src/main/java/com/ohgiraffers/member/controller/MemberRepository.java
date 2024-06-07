@@ -43,7 +43,10 @@ public class MemberRepository extends Member {
 
         if (MemberList.size() <= 10) {
 
-        MemberList.add(m);}
+        MemberList.add(m);
+        } else{
+            throw new OverMemberException
+        }
 
 
 
