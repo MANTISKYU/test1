@@ -39,12 +39,7 @@ public abstract class Member {
         this.point = point;
     }
 
-    public double calculateInterest(int point) {
-
-//        calculateInterest(this.getPoint());
-
-        return 0.0;
-    }
+    public abstract double calculateInterest(int point);
 
     @Override
     public String toString() {

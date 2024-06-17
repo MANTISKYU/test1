@@ -8,13 +8,13 @@ public class Silver extends Member implements Buyable {
 
     }
 
-    public double calculateInterest () {
-
-        return this.getPoint()*0.02;
-
+    @Override
+    public double calculateInterest(int point) {
+        return point*0.02;
     }
 
-    public int buy (int price) {
+
+    public double buy (int price) {
 
         return buy(price);
 

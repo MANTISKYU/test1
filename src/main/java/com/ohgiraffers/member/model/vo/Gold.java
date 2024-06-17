@@ -14,16 +14,16 @@ public class Gold extends Member implements Buyable {
 
     }
 
+    @Override
+    public double calculateInterest(int point) {
+        return point*0.05;
+    }
+
     public Gold() {
     }
 
-    public double calculateInterest () {
 
-        return this.getPoint()*0.05;
-
-    }
-
-    public int buy (int price) {
+    public double buy (int price) {
 
         return buy(price);
 

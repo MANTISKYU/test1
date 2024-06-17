@@ -1,13 +1,16 @@
 package com.ohgiraffers.member.run;
 
 import com.ohgiraffers.member.controller.MemberRepository;
+import com.ohgiraffers.member.controller.OverMemberException;
 import com.ohgiraffers.member.model.vo.Gold;
 import com.ohgiraffers.member.model.vo.Silver;
 import com.ohgiraffers.member.model.vo.Vip;
 
 public class Run {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws OverMemberException {
+
+        int price = 10000;
 
         MemberRepository memberRepository = new MemberRepository();
         memberRepository.insertMember(new Silver("홍길동", "Silver", 1000));
@@ -21,6 +24,8 @@ public class Run {
 
         System.out.println("=========================== 회원 포인트 적립 정보 ===========================");
         memberRepository.printData();
+
+        memberRepository.printBuyInfo(price);
 
 
 

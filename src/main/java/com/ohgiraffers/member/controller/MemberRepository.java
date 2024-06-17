@@ -2,63 +2,49 @@ package com.ohgiraffers.member.controller;
 
 import com.ohgiraffers.member.model.vo.Member;
 import java.util.ArrayList;
+import java.util.List;
 
 import static java.awt.AWTEventMulticaster.add;
 
-public class MemberRepository extends Member {
+public class MemberRepository {
 
 
-
-    ArrayList[] MemberList = new ArrayList[10];
-
+    List<Member> memberList = new ArrayList<>();
 
 
+    public void printData() {
 
+        for(Member m : memberList ) {
 
+            System.out.println(m.getGrade() + "등급 회원 " + m.getName() + "의 포인트는 " + m.getPoint() + "이고, 이자 포인트는"
+                    + m.calculateInterest(m.getPoint()) + "입니다");
 
-
-
-    public void printData () {
-
-
-        System.out.println(getGrade() + "등급 회원 " + getName() + "의 포인트는 " + getPoint() + "이고, 이자 포인트는"
-                 + calculateInterest(getPoint()) + "입니다");
-
-
-
-
-    }
-
-
-    public void printBuyInfo (int price) {
-
-
-    }
-
-    public void insertMember (Member m) {
-
-
-
-        ArrayList<Member> MemberList = new ArrayList<>();
-
-        if (MemberList.size() <= 10) {
-
-        MemberList.add(m);
         }
-            throw new OverMemberException;
+    }
 
 
+    public void printBuyInfo(int price) {
+
+
+        for(Member m : memberList) {
+
+            System.out.println("상품가격이 " + price + "원일 경우 " + "이름이 " + m.getName() + "인 사람의" + " 등급은 " + m.getGrade() + "이고 " + "포인트는 " + m.getPoint()
+            + "이며 " +m.calculateInterest(price)  + " 원을 할인받아 " + (price - (m.calculateInterest(price))) + "원에 물품을 구입할 수 있습니다");
 
 
         }
 
+    }
 
-//        ArrayList[] MemberList = new ArrayList[10];
+    public void insertMember(Member m) throws OverMemberException {
 
+        if (memberList.size() < 10) {
 
+            memberList.add(m);
+        } else throw new OverMemberException("어떤 에러인지 작성");
 
     }
 
-
+}
 
 

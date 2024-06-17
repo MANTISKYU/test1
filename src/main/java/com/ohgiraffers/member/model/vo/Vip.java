@@ -10,13 +10,12 @@ public class Vip extends Member implements Buyable{
 
     }
 
-    public double calculateInterest () {
-
-        return this.getPoint()*0.1;
-
+    @Override
+    public double calculateInterest(int point) {
+        return point*0.1;
     }
 
-    public int buy (int price) {
+    public double buy (int price) {
 
         return buy(price);
 
