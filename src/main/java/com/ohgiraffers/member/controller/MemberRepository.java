@@ -41,7 +41,7 @@ public class MemberRepository {
         if (memberList.size() < 10) {
 
             memberList.add(m);
-        } else throw new OverMemberException("어떤 에러인지 작성");
+        } else throw new OverMemberException("수용 가능한 회원수를 초과했습니다");
 
     }
 
